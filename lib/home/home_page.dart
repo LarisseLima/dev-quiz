@@ -1,49 +1,92 @@
+import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/home/widgets/appbar/app_bar_widget.dart';
 import 'package:dev_quiz/home/widgets/level_button/level_button_widget.dart';
 import 'package:dev_quiz/home/widgets/quiz_card/quiz_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'home_controller.dart';
+import 'home_state.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final controller = HomeController();
+
+  @override
+  void initState() {
+    super.initState();
+    controller.getUser();
+    controller.getQuizzes();
+    controller.stateNotifier.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBarWidget(),
+    if (controller.state == HomeState.success) {
+      return Scaffold(
+        appBar: AppBarWidget(
+          user: controller.user!,
+        ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
+              SizedBox(
+                height: 18,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  LevelButtonWidget(label: "Fácil"),
-                  LevelButtonWidget(label: "Médio"),
-                  LevelButtonWidget(label: "Difícil"),
-                  LevelButtonWidget(label: "Perito"),
+                  LevelButtonWidget(
+                    label: "Fácil",
+                  ),
+                  LevelButtonWidget(
+                    label: "Médio",
+                  ),
+                  LevelButtonWidget(
+                    label: "Difícil",
+                  ),
+                  LevelButtonWidget(
+                    label: "Perito",
+                  ),
                 ],
               ),
               SizedBox(
-                height: 24,
+                height: 18,
               ),
               Expanded(
-                  child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                children: [
-                  QuizCardWidget(),
-                  QuizCardWidget(),
-                  QuizCardWidget()
-                ],
-              ))
+                child: GridView.count(
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  crossAxisCount: 2,
+                  children: controller.quizzes!
+                      .map((e) => QuizCardWidget(
+                            title: e.title,
+                            completed:
+                                "${e.questionAnswered}/${e.questions.length}",
+                            percent: e.questionAnswered / e.questions.length,
+                          ))
+                      .toList(),
+                ),
+              )
             ],
           ),
-        ));
+        ),
+      );
+    } else {
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.darkGreen),
+          ),
+        ),
+      );
+    }
   }
 }
