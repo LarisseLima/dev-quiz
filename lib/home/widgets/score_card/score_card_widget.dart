@@ -4,47 +4,62 @@ import 'package:dev_quiz/home/widgets/chart/chart_widget.dart';
 import 'package:flutter/material.dart';
 
 class ScoreCardWidget extends StatelessWidget {
-  const ScoreCardWidget({Key? key}) : super(key: key);
+  final double percent;
+  const ScoreCardWidget({Key? key, required this.percent}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
-        height: 136,
-        decoration: BoxDecoration(
-          color: AppColors.white,
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Card(
+        elevation: 2.0,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          height: 136,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 flex: 1,
-                child: ChartWidget(),
-              ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Vamos começar',
-                          style: AppTextStyles.heading,
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          'Complete os desafios e avance em conhecimento',
-                          style: AppTextStyles.body,
-                        ),
-                      ]),
+                child: Stack(
+                  children: [
+                    Center(
+                      child: ChartWidget(
+                        percent: percent,
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        "75%",
+                        style: AppTextStyles.heading,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Let's begin!",
+                          style: AppTextStyles.heading,
+                        ),
+                        Text(
+                          "Complete the challenges and grow up in knowledge!",
+                          style: AppTextStyles.body,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),

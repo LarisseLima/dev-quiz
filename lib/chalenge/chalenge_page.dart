@@ -1,68 +1,79 @@
 import 'package:dev_quiz/chalenge/widgets/next_button/next_button_widget.dart';
 import 'package:dev_quiz/chalenge/widgets/question_indicator/quest_indicator_widget.dart';
 import 'package:dev_quiz/chalenge/widgets/quiz/quiz_widget.dart';
+import 'package:dev_quiz/result_page/result_page.dart';
 import 'package:dev_quiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
 import 'challenge_controller.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
-  ChallengePage({Key? key, required this.questions}) : super(key: key);
+  final String title;
+
+  ChallengePage({Key? key, required this.questions, required this.title})
+      : super(key: key);
 
   @override
   _ChallengePageState createState() => _ChallengePageState();
 }
 
 class _ChallengePageState extends State<ChallengePage> {
-  final controller = ChallengeController();
+  final challengeController = ChallengeController();
   final pageController = PageController();
 
   @override
-  initState() {
+  void initState() {
     pageController.addListener(() {
-      controller.currentPage = pageController.page!.toInt() + 1;
+      challengeController.currentPage = pageController.page!.toInt() + 1;
     });
+
     super.initState();
   }
 
   void nextPage() {
-    if (controller.currentPage < widget.questions.length)
+    if (challengeController.currentPage < widget.questions.length)
       pageController.nextPage(
-        duration: Duration(milliseconds: 500),
-        curve: Curves.linear,
-      );
+          duration: Duration(microseconds: 300), curve: Curves.linear);
+  }
+
+  void onSelected(bool value) {
+    if (value) {
+      challengeController.hits++;
+    }
+    nextPage();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(86),
+        preferredSize: Size.fromHeight(110),
         child: SafeArea(
           top: true,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BackButton(),
+              IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
               ValueListenableBuilder<int>(
-                valueListenable: controller.currentPageNotifier,
+                valueListenable: challengeController.currentPageNotifier,
                 builder: (context, value, _) => QuestionIndicatorWidget(
                   currentPage: value,
                   length: widget.questions.length,
                 ),
-              ),
+              )
             ],
           ),
         ),
       ),
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
-        controller: pageController,
+        controller: this.pageController,
         children: widget.questions
-            .map((e) => QuizWidget(
-                  question: e,
-                  onChanged: nextPage,
-                ))
+            .map((e) => QuizWidget(question: e, onSelected: onSelected))
             .toList(),
       ),
       bottomNavigationBar: SafeArea(
@@ -70,26 +81,37 @@ class _ChallengePageState extends State<ChallengePage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ValueListenableBuilder<int>(
-            valueListenable: controller.currentPageNotifier,
+            valueListenable: challengeController.currentPageNotifier,
             builder: (context, value, _) => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 if (value < widget.questions.length)
                   Expanded(
-                    child: NextButtonWidget.white(
-                      label: 'Skip',
-                      onTap: nextPage,
-                    ),
-                  ),
+                      child: NextButtonWidget.white(
+                    label: "Skip",
+                    onTap: () {
+                      this.nextPage();
+                    },
+                  )),
                 if (value == widget.questions.length)
-                  Expanded(
-                    child: NextButtonWidget.green(
-                      label: 'Confirm',
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
+                  // SizedBox(
+                  //   width: 7,
+                  // ),
+                  if (value == widget.questions.length)
+                    Expanded(
+                        child: NextButtonWidget.green(
+                            label: 'Finish',
+                            onTap: () {
+                              //Navigator.pop(context);
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ResultPageWidget(
+                                            title: widget.title,
+                                            length: widget.questions.length,
+                                            result: challengeController.hits,
+                                          )));
+                            })),
               ],
             ),
           ),
