@@ -1,45 +1,130 @@
 [
     {
-        "title": "NLW 5 Trilha de flutter",
-        "imagen": "assets/images/blocks.png",
-        "level": "Fácil",
-        "questionAnswered": 1,
-        "questions": 
-        [
+        "title": "Flutter in NLW",
+        "image": "assets/images/blocks.png",
+        "questionAnswered": 0,
+        "level": "easy",
+        "questions": [
             {
-                "title": "O que você esta achando do Flutter",
-                "awnsers": [
-                    {"title": "Sem problemas até aqui"},
-                    {"title": "Muito bom mas com dificuldade"},
-                    {"title": "Ótimo acertando tudo de primeira","isRight": true},
-                    {"title": "Incrivel, irei recomendar"}
+                "title": "Did you like Next Level Week?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
                 ]
             },
             {
-                "title": "Qual sua opnião sobre nosso curso",
-                "awnsers": [
-                    {"title": "Bom, recomendo"},
-                    {"title": "O Melhor até agora"},
-                    {"title": "Professor explica muito rapido","isRight": true},
-                    {"title": "Incrivel, aprendi bastante"}
+                "title": "Did you like Flutter and Dart?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
                 ]
             }
         ]
     },
     {
-        "title": "NLW 5 Comands line em flutter",
-        "imagen": "assets/images/data.png",
-        "level": "Fácil",
-        "questionAnswered": 0,
-        "questions": 
-        [
+        "title": "Code Flutter",
+        "image": "assets/images/laptop.png",
+        "questionAnswered": 1,
+        "level": "easy",
+        "questions": [
             {
-                "title": "Você reconhece esse comando 'dart --migrate', para que ele é usado",
-                "awnsers": [
-                    {"title": "Para ativar nullSafe no projeto","isRight": true},
-                    {"title": "Migrar para o dart mais atual"},
-                    {"title": "Para limpar os caches do dart"},
-                    {"title": "Fazer varredura de codigo morto no projeto"}
+                "title": "Did you like Next Level Week?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            },
+            {
+                "title": "Did you like Flutter and Dart?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Flutter & Dart",
+        "image": "assets/images/hierarchy.png",
+        "questionAnswered": 0,
+        "level": "easy",
+        "questions": [
+            {
+                "title": "Did you like Next Level Week?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            },
+            {
+                "title": "Did you like Flutter and Dart?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Flutter - Intro",
+        "image": "assets/images/check.png",
+        "questionAnswered": 2,
+        "level": "easy",
+        "questions": [
+            {
+                "title": "Did you like Next Level Week?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            },
+            {
+                "title": "Did you like Flutter and Dart?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Dart POO",
+        "image": "assets/images/data.png",
+        "questionAnswered": 1,
+        "level": "easy",
+        "questions": [
+            {
+                "title": "Did you like Next Level Week?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
+                ]
+            },
+            {
+                "title": "Did you like Flutter and Dart?",
+                "answers": [
+                    {"title": "Liked it"},
+                    {"title": "Hm... yes..."},
+                    {"title": "It was Amazing"},
+                    {"title": "Sensational, great week and Project", "isRight": true}
                 ]
             }
         ]
