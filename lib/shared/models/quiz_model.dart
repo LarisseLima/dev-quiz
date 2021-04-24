@@ -1,23 +1,23 @@
 import 'dart:convert';
-import 'package:dev_quiz/shared/models/question_model.dart';
+import 'question_model.dart';
 
-enum Level { facil, medio, dificil, perito }
+enum Level { easy, middle, hard, expert }
 
-extension LevelStringExt on String {
+extension LevelStringExtension on String {
   Level get parse => {
-        "facil": Level.facil,
-        "medio": Level.medio,
-        "dificil": Level.dificil,
-        "perito": Level.perito
+        'easy': Level.easy,
+        'middle': Level.middle,
+        'hard': Level.hard,
+        'expert': Level.expert
       }[this]!;
 }
 
-extension LevelExt on Level {
+extension LevelExtension on Level {
   String get parse => {
-        Level.facil: "facil",
-        Level.medio: "medio",
-        Level.dificil: "dificil",
-        Level.perito: "perito"
+        Level.easy: 'easy',
+        Level.middle: 'middle',
+        Level.hard: 'hard',
+        Level.expert: 'expert',
       }[this]!;
 }
 
@@ -25,15 +25,14 @@ class QuizModel {
   final String title;
   final List<QuestionModel> questions;
   final int questionAnswered;
-  final String imagem;
+  final String image;
   final Level level;
 
-//obrigatório, não pode ser nulo
   QuizModel({
     required this.title,
     required this.questions,
-    this.questionAnswered = 0, //atribuido o valor inicial 0, não pode ser nulo
-    required this.imagem,
+    this.questionAnswered = 0,
+    required this.image,
     required this.level,
   });
 
@@ -42,7 +41,7 @@ class QuizModel {
       'title': title,
       'questions': questions.map((x) => x.toMap()).toList(),
       'questionAnswered': questionAnswered,
-      'imagem': imagem,
+      'image': image,
       'level': level.parse,
     };
   }
@@ -53,7 +52,7 @@ class QuizModel {
       questions: List<QuestionModel>.from(
           map['questions']?.map((x) => QuestionModel.fromMap(x))),
       questionAnswered: map['questionAnswered'],
-      imagem: map['imagem'],
+      image: map['image'],
       level: map['level'].toString().parse,
     );
   }

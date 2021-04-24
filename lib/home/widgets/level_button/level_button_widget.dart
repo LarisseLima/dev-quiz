@@ -4,32 +4,30 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LevelButtonWidget extends StatelessWidget {
   final String label;
-  LevelButtonWidget({
-    Key? key,
-    required this.label,
-  })   : assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)),
+  LevelButtonWidget({Key? key, required this.label})
+      : assert(['Easy', 'Middle', 'Hard', 'Expert'].contains(label)),
         super(key: key);
 
   final config = {
-    "Fácil": {
-      "color": AppColors.levelButtonFacil,
-      "borderColor": AppColors.levelButtonBorderFacil,
-      "fontColor": AppColors.levelButtonTextFacil
+    'Easy': {
+      'color': AppColors.levelButtonEasy,
+      'borderColor': AppColors.levelButtonBorderEasy,
+      'fontColor': AppColors.levelButtonTextEasy,
     },
-    "Médio": {
-      "color": AppColors.levelButtonMedio,
-      "borderColor": AppColors.levelButtonBorderMedio,
-      "fontColor": AppColors.levelButtonTextMedio
+    'Middle': {
+      'color': AppColors.levelButtonMiddle,
+      'borderColor': AppColors.levelButtonBorderMiddle,
+      'fontColor': AppColors.levelButtonTextMiddle,
     },
-    "Difícil": {
-      "color": AppColors.levelButtonDificil,
-      "borderColor": AppColors.levelButtonBorderDificil,
-      "fontColor": AppColors.levelButtonTextDificil
+    'Hard': {
+      'color': AppColors.levelButtonHard,
+      'borderColor': AppColors.levelButtonBorderHard,
+      'fontColor': AppColors.levelButtonTextHard,
     },
-    "Perito": {
-      "color": AppColors.levelButtonPerito,
-      "borderColor": AppColors.levelButtonBorderPerito,
-      "fontColor": AppColors.levelButtonTextPerito
+    'Expert': {
+      'color': AppColors.levelButtonExpert,
+      'borderColor': AppColors.levelButtonBorderExpert,
+      'fontColor': AppColors.levelButtonTextExpert,
     },
   };
 
@@ -46,10 +44,13 @@ class LevelButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
         child: Text(
           label,
-          style: GoogleFonts.notoSans(color: fontColor, fontSize: 13),
+          style: GoogleFonts.notoSans(
+            color: fontColor,
+            fontSize: 13,
+          ),
         ),
       ),
     );

@@ -10,56 +10,42 @@ class ScoreCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
-      child: Card(
-        elevation: 2.0,
-        shape: RoundedRectangleBorder(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        height: 136,
+        decoration: BoxDecoration(
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          height: 136,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 flex: 1,
-                child: Stack(
-                  children: [
-                    Center(
-                      child: ChartWidget(
-                        percent: percent,
-                      ),
-                    ),
-                    Center(
-                      child: Text(
-                        "75%",
-                        style: AppTextStyles.heading,
-                      ),
-                    ),
-                  ],
-                ),
+                child: ChartWidget(percent: percent),
               ),
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Let's begin!",
-                          style: AppTextStyles.heading,
-                        ),
-                        Text(
-                          "Complete the challenges and grow up in knowledge!",
-                          style: AppTextStyles.body,
-                        )
-                      ],
-                    ),
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Let\'s start',
+                        style: AppTextStyles.heading,
+                      ),
+                      Text(
+                        'Complete challenges and advance knowledge :)',
+                        style: AppTextStyles.body,
+                      ),
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -10,10 +10,12 @@ class SplashPage extends StatelessWidget {
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
         ));
-    return Container(
-      decoration: BoxDecoration(gradient: AppGradients.linear),
-      child: Center(
-        child: Image.asset(AppImages.logo),
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: AppGradients.linear,
+        ),
+        child: Center(child: Image.asset(AppImages.logo)),
       ),
     );
   }
