@@ -2,6 +2,7 @@ import 'package:dev_quiz/chalenge/widgets/next_button/next_button_widget.dart';
 import 'package:dev_quiz/core/app_images.dart';
 import 'package:dev_quiz/core/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ResultPage extends StatelessWidget {
   final String title;

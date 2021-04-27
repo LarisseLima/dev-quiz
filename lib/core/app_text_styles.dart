@@ -52,7 +52,7 @@ class AppTextStyles {
     fontWeight: FontWeight.normal,
   );
   static final TextStyle bodyDarkGreen = GoogleFonts.notoSans(
-    color: AppColors.darkGreen,
+    color: AppColors.darkPink,
     fontSize: 13,
     fontWeight: FontWeight.w500,
   );

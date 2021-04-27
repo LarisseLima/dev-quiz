@@ -1,13 +1,13 @@
 import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/core/app_text_styles.dart';
-import 'package:dev_quiz/shared/models/answers_model.dart';
+import 'package:dev_quiz/shared/models/answer_model.dart';
 import 'package:flutter/material.dart';
 
 class AnswerWidget extends StatelessWidget {
   final AnswerModel answer;
   final bool isSelected;
   final bool disabled;
-  final VoidCallback onTap;
+  final ValueChanged<bool> onTap;
 
   const AnswerWidget({
     Key? key,
@@ -18,7 +18,7 @@ class AnswerWidget extends StatelessWidget {
   }) : super(key: key);
 
   Color get _selectedColorRight =>
-      answer.isRight ? AppColors.darkGreen : AppColors.darkRed;
+      answer.isRight ? AppColors.darkPink : AppColors.darkRed;
 
   Color get _selectedBorderRight =>
       answer.isRight ? AppColors.lightGreen : AppColors.lightRed;
@@ -41,7 +41,9 @@ class AnswerWidget extends StatelessWidget {
       child: IgnorePointer(
         ignoring: disabled,
         child: GestureDetector(
-          onTap: onTap,
+          onTap: () {
+            onTap(answer.isRight);
+          },
           child: Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(

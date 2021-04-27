@@ -1,3 +1,4 @@
+import 'package:dev_quiz/chalenge/challenge_page.dart';
 import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/home/widgets/appbar/app_bar_widget.dart';
 import 'package:dev_quiz/home/widgets/level_button/level_button_widget.dart';
@@ -88,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         body: Center(
           child: CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(AppColors.darkGreen),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.darkPink),
           ),
         ),
       );

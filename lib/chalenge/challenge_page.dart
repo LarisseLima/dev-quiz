@@ -1,10 +1,10 @@
-import 'package:dev_quiz/chalenge/widgets/next_button/next_button_widget.dart';
-import 'package:dev_quiz/chalenge/widgets/question_indicator/question_indicator_widget.dart';
-import 'package:dev_quiz/chalenge/widgets/quiz/quiz_widget.dart';
 import 'package:dev_quiz/result_page/result_page.dart';
 import 'package:dev_quiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
 import 'challenge_controller.dart';
+import 'widgets/question_indicator/question_indicator_widget.dart';
+import 'widgets/quiz/quiz_widget.dart';
+import 'widgets/next_button/next_button_widget.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
@@ -100,7 +100,7 @@ class _ChallengePageState extends State<ChallengePage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ResultPageWidget(
+                            builder: (context) => ResultPage(
                               title: widget.title,
                               length: widget.questions.length,
                               result: controller.quantityAnswer,

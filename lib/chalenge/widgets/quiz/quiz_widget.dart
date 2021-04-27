@@ -1,13 +1,13 @@
 import 'package:dev_quiz/chalenge/widgets/awnser/awnser_widget.dart';
 import 'package:dev_quiz/core/app_text_styles.dart';
-import 'package:dev_quiz/shared/models/answers_model.dart';
+import 'package:dev_quiz/shared/models/answer_model.dart';
 import 'package:dev_quiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
 
 class QuizWidget extends StatefulWidget {
   final QuestionModel question;
-  final VoidCallback onChanged;
-  const QuizWidget({Key? key, required this.question, required this.onChanged})
+  final ValueChanged<bool> onSelected;
+  const QuizWidget({Key? key, required this.question, required this.onSelected})
       : super(key: key);
 
   @override
@@ -34,12 +34,11 @@ class _QuizWidgetState extends State<QuizWidget> {
               answer: answer(i),
               isSelected: indexSelected == i,
               disabled: indexSelected != -1,
-              onTap: () {
+              onTap: (value) {
                 indexSelected = i;
-                widget.onChanged();
                 setState(() {});
                 Future.delayed(Duration(seconds: 1))
-                    .then((value) => widget.onChanged());
+                    .then((_) => widget.onSelected(value));
               },
             ),
         ],
