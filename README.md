@@ -13,7 +13,7 @@
    - [Preview 📱](#preview-)
    - [Layout 🎨](#layout-)
    - [Funcionalidades 🛠️](#Funcionalidades-%EF%B8%8F)
-   - [Como Usar 🤔](#como-usar-)
+   - [Como Rodar 🤔](#como-usar-)
    - [Como Contribuir 💪](#como-contribuir-)
    - [Licença 📝](#licença-)
 
@@ -66,10 +66,11 @@
 
 ---
 
-<h2 align="center">Como Usar 🤔</h2>
+<h2 align="center">Como Rodar 🤔</h2>
 
    ```
-   First of all, correctly configure the Flutter development environment on your machine, see https://flutter.dev/docs/get-started/install
+   First of all, correctly configure the Flutter development environment on your machine, 
+   <br>see https://flutter.dev/docs/get-started/install<br>
    
    - Clone this repository:
    $ git clonehttps://github.com/LarisseLima/dev-quiz 
