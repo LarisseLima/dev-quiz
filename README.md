@@ -70,7 +70,7 @@
 
    ```
    First of all, correctly configure the Flutter development environment on your machine, 
-   <br>see https://flutter.dev/docs/get-started/install<br>
+   see https://flutter.dev/docs/get-started/install
    
    - Clone this repository:
    $ git clonehttps://github.com/LarisseLima/dev-quiz 
