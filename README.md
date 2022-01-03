@@ -26,7 +26,6 @@
 <p align="center">
    O QuizDev foi desenvolvido na Next Level Week, uma semana intensa de estudos, em flutter  desenvolvido pela Rocketseat. <br>
    Essa aplicação tem como intuito ser um Quiz para programadores intensificarem seu conhecimento em programação flutter, através dos exercícios propostos pela aplicação, onde você tem a interatividade de perguntas e respostas.<br>
-  
 </p>
 
 ---
@@ -51,8 +50,7 @@
 
 <h2 align="center">Funcionalidades 🛠️</h2>
 
-   <p>
-   
+   <p>   
 - Quiz 
     - Perguntas,
     - Respostas,
@@ -61,7 +59,6 @@
     - Resultados
     - Compartilhamento de Resultados...
 - Entre várias outras coisas incríveis!
-  
    </p>
 
 ---
