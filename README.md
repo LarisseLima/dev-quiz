@@ -4,7 +4,6 @@
 
 <h1 align="center">DevQuiz</h1>
 
-
 <h2 align="center">Tópicos 📋</h2>
 
    <p>
@@ -66,22 +65,21 @@
 <h2 align="center">Como Rodar 🤔</h2>
 
    ```
-   First of all, correctly configure the Flutter development environment on your machine, 
+   Antes de tudo, configure corretamente o ambiente de desenvolvimento Flutter em sua máquina, 
    see https://flutter.dev/docs/get-started/install
    
-   - Clone this repository:
+   - Clonar este repositório:
    $ git clonehttps://github.com/LarisseLima/dev-quiz 
 
-   - Enter in directory:
+   - Entre no diretório:
    $ cd Dev-Quiz
 
-   - For install dependencies:
+   - Para instalar as dependências:
    $ flutter pub get
 
-   - Run the app: 
+   - Rodar o  app: 
    $ flutter run
    ```
-
 ---
 
 <h2 align="center">Como Contribuir 💪</h2>
@@ -98,7 +96,6 @@
    - Envie suas mudanças:
    $ git push origin my-feature
    ```
-
 ---
 
 <h2 align="center">Licença 📝</h2>
@@ -113,5 +110,3 @@
    Se isso te ajudou, dê uma ⭐, isso vai me ajudar também! 😉
 
 ---
-
- 
