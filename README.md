@@ -48,7 +48,7 @@
 <h2 align="center">Funcionalidades 🛠️</h2>
 
    <p>   
-- Quiz 
+Quiz 
     - Perguntas,
     - Respostas,
     - Feedback para o usuário,
@@ -101,9 +101,6 @@
 <p align="center">
    Este repositório está sob licença MIT.Você pode ver o arquivo <a href="https://github.com/LarisseLima/dev-quiz/new/master">LICENSE</a> para mais detalhes. 😉
 </p>
-
    ---
    >Esse projeto foi desenvolvido com ❤️ por **[@Larisse Lima](https://www.linkedin.com/in/larisselima/)**, na #NextLevelWeek05 da **[Rocketseat](https://rocketseat.com.br/)**.<br>
-   Se isso te ajudou, dê uma ⭐, isso vai me ajudar também! 😉
-
 ---
