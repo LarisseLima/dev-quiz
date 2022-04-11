@@ -5,7 +5,6 @@
 <h1 align="center">DevQuiz</h1>
 
 <h2 align="center">Tópicos 📋</h2>
-
    <p>
    - [Sobre 📖](#sobre-)
    - [Preview 📱](#preview-)
