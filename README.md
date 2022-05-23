@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">DevQuiz</h1>
-<h2 align="center">Tópicos 📋</h2>
+<!-- <h2 align="center">Tópicos 📋</h2>
    <p>
    - [Sobre 📖](#sobre-)
    - [Preview 📱](#preview-)
@@ -14,7 +14,7 @@
    - [Licença 📝](#licença-)
 
    </p>
----
+--- -->
 
 <h2 align="center">Sobre 📖</h2> 
 <p align="center">
